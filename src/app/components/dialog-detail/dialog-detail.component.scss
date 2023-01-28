@@ -1,0 +1,50 @@
+.content-container { 
+    width: 900px;
+    max-width: 900px;
+    padding: 2em 2em;
+    overflow-x: hidden;
+
+  
+
+    th {
+       
+        text-align: center;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+       
+    }
+    tr{
+        background-color: rgb( 255, 255, 255);
+        text-align: center;
+        width: 1700px;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        color:rgb(105,105,105);
+        height: 35px;
+    }
+    tr:nth-child(even) {
+        background-color: rgba( 205, 3, 46, 0.4);
+        text-align: center;
+        width: 170px;
+        vertical-align: middle;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        text-align: center;
+        color:rgb( 40, 40, 40) ;
+        height: 35px;
+    }
+}
+
+.close-button {
+    background-color: rgba( 205, 3, 46, 1);
+    font-size: 16px;
+    color: whitesmoke;
+    border-radius: 7px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,66 @@
+<div id="Pagina" >
+    <!-- Header -->
+    <div class="top-bar">
+        <h1 class="header-title">Sistema Generador de Estadísticas</h1>
+    </div>
+    
+    <!-- Form Section -->
+    <div class="form-container" >
+        <h2 class="message">Bienvenido</h2>
+        <div class="form-subcontainer-center">
+
+            
+            <label for="degrees-select">
+                Seleccione una licenciatura:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            </label>
+            <mat-form-field appearance="fill" id="degrees-select" aria-selected="true">
+                <mat-label>Licenciaturas</mat-label>
+                <mat-select [formControl]="subjectControl"  (selectionChange)="setDropdownSubject($event)">
+                    <mat-option *ngFor="let subject of  subjectList " [value]="subject">
+                        {{subject}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+          
+        </div>
+        <div class="form-subcontainer-button" *ngIf = "isSelected" >
+            <button class="report-generate" (click)="openDialog()">Ver detalle</button>
+        </div>
+            
+        <div class="form-subcontainer-button" *ngIf = "isSelected" >
+            <button  class="report-generate" (click)="generatePDF()">Imprimir</button>
+        </div>
+
+    </div>
+
+    
+
+    <div class="graph-container" id="printSection">
+        <ng-container *ngIf="attributeList.length <= 0 && (selectedSubject === '' || selectedSubject === undefined)" >
+            <div class="empty-container">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+               
+            </div>
+          </ng-container>
+          <ng-container>
+            <mat-tab-group *ngIf = "isSelected"   (selectedTabChange)="getDataPerTab($event)">
+                <mat-tab *ngFor="let tab of attributeList">
+                  <ng-template mat-tab-label>{{selectedSubject}} - {{tab.id}}</ng-template>
+                    <ng-template matTabContent>
+                        <app-detail [selectedAttribute]="tab.id"> </app-detail>
+                    </ng-template>
+                </mat-tab>
+            </mat-tab-group>
+
+          </ng-container>
+    </div>
+
+    
+     
+
+    
+    
+
+
+</div>

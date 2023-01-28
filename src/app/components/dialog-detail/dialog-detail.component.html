@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Detalle</h1>
+<mat-dialog-content class="mat-typography" id="detalle">
+    <div class="content-container">
+        <table>
+            <thead >
+                <th *ngFor="let header of tableHeaders">{{header}}</th>
+            </thead>
+            <tbody class="content">
+                <tr *ngFor="let row of detailTableData">
+                    <td>{{row.tematicGroup}}</td>
+                    <td>{{row.subjectKey}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.attribute}}</td>
+                    <td>{{row.year}}</td>
+                    <td>{{row.beat}}</td>
+                    <td>{{row.achieve}}</td>
+                    <td>{{row.partial}}</td>
+                    <td>{{row.notAchieve}}</td>
+                    <td>{{row.total}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    
+    <button  class="close-button" mat-button mat-dialog-close cdkFocusInitial >Cerrar</button>
+</mat-dialog-actions>
